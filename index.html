@@ -1,248 +1,213 @@
 <!doctype html>
-  <html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <title>HMK Support</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- SEO / 공유 메타 -->
-    <meta name="description" content="HMK 앱의 사용 가이드, FAQ를 
-  확인하세요.">
-    <meta property="og:title" content="HMK Support">
-    <meta property="og:description" content="앱 사용 가이드 · FAQ">
-    <meta property="og:type" content="website">
-    <link rel="icon" href="favicon.png">
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>HMK 자산관리 - 고객 지원</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HMK 자산관리 앱의 사용 가이드, FAQ, 고객 지원">
+  <meta property="og:title" content="HMK 자산관리 - 고객 지원">
+  <meta property="og:description" content="가구 자산을 한눈에 관리하세요 · 사용 가이드 · FAQ">
+  <meta property="og:type" content="website">
 
-    <style>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1f2937;
+      --muted: #6b7280;
+      --brand: #3b82f6;
+      --brand-light: rgba(59,130,246,.08);
+      --card: #f8fafc;
+      --border: #e5e7eb;
+    }
+    @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #ffffff;
-        --fg: #1f2937;
-        --muted: #6b7280;
-        --brand: #6c8cff;
-        --card: #f8fafc;
-        --border: #e5e7eb;
+        --bg: #0b1220;
+        --fg: #e5e7eb;
+        --muted: #9aa4b2;
+        --brand: #60a5fa;
+        --brand-light: rgba(96,165,250,.1);
+        --card: #0f1629;
+        --border: #1c2336;
       }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #0b1220;
-          --fg: #e5e7eb;
-          --muted: #9aa4b2;
-          --brand: #8aa2ff;
-          --card: #0f1629;
-          --border: #1c2336;
-        }
-      }
-      * { box-sizing: border-box; }
-      html, body { margin:0; padding:0; background:var(--bg); 
-  color:var(--fg); 
-        font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", 
-  Roboto, 
-        "Noto Sans KR", Arial, "Apple SD Gothic Neo", "Malgun Gothic", 
-  sans-serif; }
-      a { color: var(--brand); text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      .container { max-width: 960px; padding: 24px; margin: 0 auto; }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--fg);
+      font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Noto Sans KR", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 960px; padding: 24px; margin: 0 auto; }
 
-      header { border-bottom: 1px solid var(--border); 
-        background: linear-gradient(180deg, rgba(108,140,255,.08), 
-  transparent); }
-      .nav { display:flex; gap:16px; align-items:center; justify-content: 
-  space-between; 
-        padding: 14px 24px; }
-      .nav .links a { color: var(--muted); margin-left: 14px; font-weight:
-   600; }
-      .hero { padding: 48px 24px 24px; }
-      .hero h1 { font-size: 36px; margin: 0 0 8px; letter-spacing: 
-  -0.02em; }
-      .hero p { margin: 0; color: var(--muted); }
+    header { border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--brand-light), transparent); }
+    .nav { display:flex; gap:16px; align-items:center; justify-content: space-between;
+      padding: 14px 24px; max-width: 960px; margin: 0 auto; }
+    .nav .links a { color: var(--muted); margin-left: 14px; font-weight: 600; font-size: 14px; }
+    .hero { padding: 48px 24px 24px; max-width: 960px; margin: 0 auto; }
+    .hero h1 { font-size: 36px; margin: 0 0 8px; letter-spacing: -0.02em; }
+    .hero p { margin: 0; color: var(--muted); font-size: 18px; }
 
-      section { padding: 32px 0; border-bottom: 1px solid var(--border); }
-      section h2 { font-size: 22px; margin: 0 0 16px; }
-      .grid { display: grid; gap: 16px; }
-      @media (min-width: 720px) { 
-        .grid.cols-2 { grid-template-columns: 1fr 1fr; } 
-        .grid.cols-3 { grid-template-columns: repeat(3,1fr); } 
-      }
+    section { padding: 32px 0; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
+    section h2 { font-size: 22px; margin: 0 0 16px; }
+    .grid { display: grid; gap: 16px; }
+    @media (min-width: 720px) {
+      .grid.cols-2 { grid-template-columns: 1fr 1fr; }
+      .grid.cols-3 { grid-template-columns: repeat(3,1fr); }
+    }
 
-      .card { background: var(--card); border: 1px solid var(--border); 
-        border-radius: 12px; padding: 16px; }
-      .card h3 { margin: 0 0 8px; font-size: 18px; }
-      .card p, .card ul, .card ol { margin: 8px 0; }
-      .muted { color: var(--muted); }
+    .card { background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px; }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p, .card ul, .card ol { margin: 8px 0; }
+    .muted { color: var(--muted); }
+    .icon { font-size: 28px; margin-bottom: 8px; }
 
-      .screenshots { display: grid; gap: 16px; margin: 16px 0; }
-      @media (min-width: 720px) { 
-        .screenshots { grid-template-columns: repeat(auto-fit, 
-  minmax(200px, 1fr)); } 
-      }
-      .screenshot { border-radius: 12px; overflow: hidden; border: 1px 
-  solid var(--border); }
-      .screenshot img { width: 100%; height: auto; display: block; }
+    footer { padding: 24px; color: var(--muted); text-align: center; font-size: 14px; }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <strong>HMK 자산관리</strong>
+      <nav class="links">
+        <a href="#start">시작하기</a>
+        <a href="#features">기능</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="#contact">문의</a>
+      </nav>
+    </div>
+    <div class="hero">
+      <h1>HMK 자산관리 고객 지원</h1>
+      <p>가구 자산을 한눈에 관리하세요</p>
+    </div>
+  </header>
 
-      footer { padding: 24px; color: var(--muted); text-align: center; }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="nav">
-        <strong>HMK Support</strong>
-        <nav class="links">
-          <a href="#start">시작하기</a>
-          <a href="#faq">FAQ</a>
-          <a href="#privacy">개인정보처리방침</a>
-          <a href="#contact">문의</a>
-        </nav>
-      </div>
-      <div class="container hero">
-        <h1>HMK Support</h1>
-        <p>앱 사용 가이드 · FAQ</p>
-      </div>
-    </header>
-
-    <main class="container">
-      <!-- 시작하기 -->
-      <section id="start">
-        <h2>시작하기</h2>
-        <div class="grid cols-2">
-          <div class="card">
-            <h3>기본 개념</h3>
-            <p class="muted">HMK는 생산성 앱으로, 직관적인 
-  인터페이스와 강력한 기능을 제공합니다.</p>
-          </div>
-          <div class="card">
-            <h3>빠른 시작</h3>
-            <ol>
-              <li>앱을 다운로드하고 실행</li>
-              <li>간단한 설정 완료</li>
-              <li>바로 사용 시작</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      
-
-      <!-- 주요 기능 -->
-      <section id="features">
-        <h2>주요 기능</h2>
-        <div class="grid cols-3">
-          <div class="card">
-            <strong>간편한 사용</strong>
-            <p class="muted">직관적인 UI로 누구나 쉽게 사용</p>
-          </div>
-          <div class="card">
-            <strong>데이터 동기화</strong>
-            <p class="muted">기기 간 자동 동기화 지원</p>
-          </div>
-          <div class="card">
-            <strong>안전한 보관</strong>
-            <p class="muted">클라우드에 안전하게 저장</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section id="faq">
-        <h2>자주 묻는 질문(FAQ)</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>데이터는 어디에 저장되나요?</h3>
-            <p class="muted">모든 데이터는 Firebase에 안전하게 저장되며, 
-  기기 간 자동 동기화됩니다.</p>
-          </div>
-          <div class="card">
-            <h3>오프라인에서도 사용할 수 있나요?</h3>
-            <p class="muted">네, 한 번 다운로드한 데이터는 오프라인에서도 
-  사용할 수 있습니다.</p>
-          </div>
-          <div class="card">
-            <h3>광고를 제거하고 싶어요.</h3>
-            <p class="muted">앱 내 설정에서 프리미엄 구독을 통해 광고를 
-  제거할 수 있습니다.</p>
-          </div>
-          <div class="card">
-            <h3>계정을 삭제하려면?</h3>
-            <p class="muted">앱 내 설정 > 계정 관리에서 계정 삭제를 요청할
-   수 있습니다.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 개인정보처리방침 -->
-      <section id="privacy">
-        <h2>개인정보처리방침</h2>
+  <main class="container">
+    <!-- 시작하기 -->
+    <section id="start">
+      <h2>시작하기</h2>
+      <div class="grid cols-2">
         <div class="card">
-          <h3>1. 수집하는 개인정보</h3>
-          <ul>
-            <li><strong>회원가입 시</strong>: 이메일 주소, 닉네임</li>
-            <li><strong>자동 수집</strong>: 디바이스 UUID, 플랫폼 
-  정보(iOS), 앱 사용 기록</li>
-            <li><strong>사용 데이터</strong>: 앱 내 활동 기록</li>
-            <li>모든 데이터는 Firebase를 통해 암호화되어 저장됩니다</li>
-          </ul>
-          
-          <h3>2. 개인정보의 처리 목적</h3>
-          <ul>
-            <li>회원 관리 및 본인 확인</li>
-            <li>데이터 저장 및 기기 간 동기화</li>
-            <li>앱 사용 통계 분석(Firebase Analytics)</li>
-            <li>서비스 개선을 위한 사용자 피드백 수집</li>
-          </ul>
-          
-          <h3>3. 개인정보의 제3자 제공</h3>
-          <ul>
-            <li><strong>Firebase (Google)</strong><br>
-                제공 항목: 이메일, 사용 데이터, 디바이스 정보<br>
-                제공 목적: 데이터 저장, 동기화, 통계 분석<br>
-                보유 기간: 회원 탈퇴 시까지
-            </li>
-          </ul>
-          
-          <h3>4. 개인정보의 보유 및 파기</h3>
-          <ul>
-            <li>회원 탈퇴 시 즉시 삭제 (법령에 의한 보관 의무 제외)</li>
-            <li>미사용 계정: 1년 미접속 시 별도 저장 후 파기</li>
-          </ul>
-          
-          <h3>5. 이용자의 권리</h3>
-          <ul>
-            <li>개인정보 열람, 수정, 삭제 요청 가능</li>
-            <li>앱 내 설정에서 계정 삭제 가능</li>
-          </ul>
-          
-          <h3>6. 개인정보 보호책임자</h3>
-          <ul>
-            <li>회사: (주)BCD</li>
-            <li>이메일: support@hmk.app</li>
-          </ul>
-          
-          <h3>7. 개인정보처리방침 변경</h3>
-          <ul>
-            <li>변경 시 앱 내 공지 및 이메일 통지</li>
-            <li>시행일: 2025년 1월 1일</li>
-          </ul>
+          <h3>1. Google 로그인</h3>
+          <p class="muted">앱을 실행하고 Google 계정으로 로그인하세요. 이용약관에 동의하면 바로 시작할 수 있습니다.</p>
         </div>
-      </section>
-
-      <!-- 문의 -->
-      <section id="contact">
-        <h2>문의</h2>
         <div class="card">
-          <p class="muted">버그 제보 및 기능 제안은 앱 내 설정 > 
-  문의하기를 이용해 주세요.</p>
-          <p class="muted">이메일: <a 
-  href="mailto:support@hmk.app">support@hmk.app</a></p>
+          <h3>2. 가구 설정</h3>
+          <p class="muted">새 가구를 만들거나, 초대 코드를 입력하여 기존 가구에 참여하세요. 가구 구성원과 함께 자산을 관리할 수 있습니다.</p>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer>
-      © <span id="year"></span> HMK. All rights reserved.
-    </footer>
+    <!-- 주요 기능 -->
+    <section id="features">
+      <h2>주요 기능</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <div class="icon">📊</div>
+          <strong>대시보드</strong>
+          <p class="muted">총 자산, 카테고리별 분포, 수익률을 한눈에 확인</p>
+        </div>
+        <div class="card">
+          <div class="icon">💰</div>
+          <strong>자산 등록</strong>
+          <p class="muted">예금, 주식, 부동산, 연금 등 다양한 자산을 카테고리별로 관리</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤖</div>
+          <strong>AI 어드바이저</strong>
+          <p class="muted">자산 데이터 기반 AI 투자 조언, 웹 검색 연동, 전문가 토론 모드</p>
+        </div>
+        <div class="card">
+          <div class="icon">📅</div>
+          <strong>캘린더</strong>
+          <p class="muted">배당일, 만기일, 리밸런싱 일정 등 투자 관련 일정 관리</p>
+        </div>
+        <div class="card">
+          <div class="icon">🎯</div>
+          <strong>목표 설정</strong>
+          <p class="muted">자산 목표를 설정하고 달성률을 추적</p>
+        </div>
+        <div class="card">
+          <div class="icon">💱</div>
+          <strong>환율 정보</strong>
+          <p class="muted">실시간 환율 정보 제공, 해외 자산 원화 환산</p>
+        </div>
+      </div>
+    </section>
 
-    <script>
-      document.getElementById('year').textContent = new 
-  Date().getFullYear();
-    </script>
-  </body>
-  </html>
+    <!-- AI 어드바이저 -->
+    <section id="ai">
+      <h2>AI 어드바이저 사용법</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>기본 채팅</h3>
+          <p class="muted">자산 현황에 대해 자유롭게 질문하세요. AI가 보유 자산 데이터를 기반으로 맞춤 조언을 제공합니다.</p>
+        </div>
+        <div class="card">
+          <h3>토론 모드</h3>
+          <p class="muted">여러 투자 전문가 페르소나(가치투자, 성장투자, 리스크관리 등)가 라운드테이블 형식으로 토론합니다.</p>
+        </div>
+        <div class="card">
+          <h3>웹 검색</h3>
+          <p class="muted">설정에서 Brave Search API 키를 등록하면 AI가 실시간 웹 정보를 검색하여 답변에 활용합니다.</p>
+        </div>
+        <div class="card">
+          <h3>ChatGPT 연동</h3>
+          <p class="muted">ChatGPT 계정을 연동하면 GPT 모델을 활용한 고품질 투자 분석을 받을 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>데이터는 어디에 저장되나요?</h3>
+          <p class="muted">모든 데이터는 Google Firebase에 암호화되어 안전하게 저장됩니다. 가구 단위로 데이터가 격리되어 다른 가구의 데이터에 접근할 수 없습니다.</p>
+        </div>
+        <div class="card">
+          <h3>AI 투자 조언을 믿어도 되나요?</h3>
+          <p class="muted">AI 조언은 참고용으로만 활용해주세요. 실제 투자 판단의 책임은 이용자에게 있으며, 과거 수익률이 미래 수익을 보장하지 않습니다.</p>
+        </div>
+        <div class="card">
+          <h3>가구 구성원을 초대하려면?</h3>
+          <p class="muted">설정 > 가구 정보에서 초대 코드를 확인하고, 구성원에게 공유하세요. 구성원은 앱에서 초대 코드를 입력하여 가구에 참여할 수 있습니다.</p>
+        </div>
+        <div class="card">
+          <h3>계정을 삭제하려면?</h3>
+          <p class="muted">앱 내 설정에서 계정 삭제를 요청할 수 있습니다. 삭제 시 모든 개인 데이터가 즉시 파기됩니다.</p>
+        </div>
+        <div class="card">
+          <h3>macOS 외 다른 플랫폼도 지원하나요?</h3>
+          <p class="muted">현재 macOS 전용 앱으로 제공되고 있습니다. 추후 iOS, iPadOS 지원을 검토 중입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 문의 -->
+    <section id="contact">
+      <h2>문의</h2>
+      <div class="card">
+        <p>앱 사용 중 문제가 발생하거나 기능 제안이 있으시면 아래로 연락해주세요.</p>
+        <p><strong>이메일</strong>: <a href="mailto:hmkassetmanager@gmail.com">hmkassetmanager@gmail.com</a></p>
+        <p class="muted" style="margin-top:16px; font-size:14px">
+          <a href="privacy.html">개인정보처리방침</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> HMK 자산관리. All rights reserved.
+    &nbsp;·&nbsp; <a href="privacy.html">개인정보처리방침</a>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
